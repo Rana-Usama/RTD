@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ImageBackground, View, Text, TouchableOpacity, Image } from 'react-native'
+import { ImageBackground, View, Text, ScrollView, TouchableOpacity, Image } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize'
 
 //components
@@ -27,6 +27,29 @@ export default function SwatVideoScreen() {
         SetInputField(tempfeilds);
 
     };
+
+    const courseData = [
+        {
+            imageSource: require('../../assets/couch.jpg'),
+            title: 'Robert Fox',
+            time: '5 min ago'
+        },
+        {
+            imageSource: require('../../assets/jacket.jpg'),
+            title: 'Jacob Jones',
+            time: '5 min ago'
+        },
+        {
+            imageSource: require('../../assets/nav.png'),
+            title: 'Annete Black',
+            time: '5 min ago'
+        },
+        {
+            imageSource: require('../../assets/nav.png'),
+            title: 'Jhones',
+            time: '5 min ago'
+        },
+    ]
     return (
 
         <Screen style={{ flex: 1, justifyContent: 'flex-start', alignItems: "center", backgroundColor: Colors.lightWhite }}>
@@ -83,6 +106,38 @@ export default function SwatVideoScreen() {
                 </TouchableOpacity>
             </View>
 
+            {/* Card */}
+            <ScrollView>
+                <View style={{ marginTop: RFPercentage(3), width: '90%', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }} >
+                    {courseData.map((item, i) => (
+
+
+
+                        <View style={{ width: RFPercentage(21.5), height: RFPercentage(27), borderRadius: RFPercentage(1.5), backgroundColor: Colors.white }}>
+
+                            {/* //Image*/}
+                            <Image style={{ width: RFPercentage(21.5), height: RFPercentage(15), borderTopLeftRadius: RFPercentage(1.5), borderTopRightRadius: RFPercentage(1.5), overflow: 'hidden' }} source={item.imageSource} />
+
+                            {/* //Title */}
+                            <View style={{ width: '90%', marginLeft: RFPercentage(1) }}>
+                                <Text style={{ fontSize: 15, fontWeight: 'bold', color: Colors.black }}>
+                                    {/* Complete Business's Guides to Web Development */}
+                                    {item.title}
+                                </Text>
+                            </View>
+
+                            {/* //Button */}
+                            <TouchableOpacity>
+                                <Text style={{ color: Colors.navBlue, fontSize: 13, fontWeight: 'bold', marginLeft: RFPercentage(1), marginTop: RFPercentage(1) }}>
+                                    {item.time}
+                                    {/* Take Course */}
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
+                    ))}
+
+                </View>
+            </ScrollView>
         </Screen>
     )
 }
