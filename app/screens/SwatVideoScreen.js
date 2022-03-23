@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { ImageBackground, View, Text, ScrollView, TouchableOpacity, Image } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize'
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 //components
 import Screen from "../components/Screen"
 import InputField from './../components/common/InputField';
+import BottomTab from '../components/common/BottomTab';
 
 //config
 import Colors from '../config/Colors'
@@ -101,43 +103,178 @@ export default function SwatVideoScreen() {
                 </TouchableOpacity>
 
                 {/* Filter Icon */}
-                <TouchableOpacity activeOpacity={0.6} style={{ position: 'absolute', right: 0, width: RFPercentage(6), height: RFPercentage(6), borderRadius: RFPercentage(3), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
-                    <Image style={{ width: RFPercentage(3), height: RFPercentage(4) }} source={require('../../assets/filter.png')} />
+                <TouchableOpacity activeOpacity={0.6} style={{ position: 'absolute', right: 0, width: RFPercentage(4), height: RFPercentage(4), borderRadius: RFPercentage(3), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
+                    <Image style={{ width: RFPercentage(2), height: RFPercentage(3) }} source={require('../../assets/filter.png')} />
                 </TouchableOpacity>
             </View>
 
             {/* Card */}
-            <ScrollView>
-                <View style={{ marginTop: RFPercentage(3), width: '90%', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }} >
-                    {courseData.map((item, i) => (
+            <ScrollView style={{ flex: 1, width: '100%' }} >
+                <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
 
+                    {/* {courseData.map((item, i) => ( */}
+                    <View style={{ marginTop: RFPercentage(3), width: '90%', flexDirection: 'row', alignItems: 'center' }} >
 
-
-                        <View style={{ width: RFPercentage(21.5), height: RFPercentage(27), borderRadius: RFPercentage(1.5), backgroundColor: Colors.white }}>
+                        {/* Card */}
+                        <View style={{ width: RFPercentage(21.5), height: RFPercentage(25), borderRadius: RFPercentage(1.5), backgroundColor: Colors.white, marginLeft: RFPercentage(1.5) }}>
 
                             {/* //Image*/}
-                            <Image style={{ width: RFPercentage(21.5), height: RFPercentage(15), borderTopLeftRadius: RFPercentage(1.5), borderTopRightRadius: RFPercentage(1.5), overflow: 'hidden' }} source={item.imageSource} />
+                            <Image style={{ width: RFPercentage(21.5), height: RFPercentage(15), borderTopLeftRadius: RFPercentage(1.5), borderTopRightRadius: RFPercentage(1.5), overflow: 'hidden' }} source={require('../../assets/angularr.jpg')} />
 
                             {/* //Title */}
-                            <View style={{ width: '90%', marginLeft: RFPercentage(1) }}>
+                            <View style={{ width: '90%', marginLeft: RFPercentage(1), marginTop: RFPercentage(1) }}>
                                 <Text style={{ fontSize: 15, fontWeight: 'bold', color: Colors.black }}>
                                     {/* Complete Business's Guides to Web Development */}
-                                    {item.title}
+                                    The Complete Game developemnt Course
                                 </Text>
                             </View>
 
                             {/* //Button */}
                             <TouchableOpacity>
                                 <Text style={{ color: Colors.navBlue, fontSize: 13, fontWeight: 'bold', marginLeft: RFPercentage(1), marginTop: RFPercentage(1) }}>
-                                    {item.time}
-                                    {/* Take Course */}
+                                    {/* {item.time} */}
+                                    Take Course
                                 </Text>
                             </TouchableOpacity>
                         </View>
-                    ))}
+
+
+
+                        {/* Card */}
+                        <View style={{ width: RFPercentage(21.5), height: RFPercentage(25), borderRadius: RFPercentage(1.5), backgroundColor: Colors.white, marginLeft: RFPercentage(1.5) }}>
+
+                            {/* //Image*/}
+                            <Image style={{ width: RFPercentage(21.5), height: RFPercentage(15), borderTopLeftRadius: RFPercentage(1.5), borderTopRightRadius: RFPercentage(1.5), overflow: 'hidden' }} source={require('../../assets/Mac.jpeg')} />
+
+                            {/* //Title */}
+                            <View style={{ width: '90%', marginLeft: RFPercentage(1), marginTop: RFPercentage(1) }}>
+                                <Text style={{ fontSize: 15, fontWeight: 'bold', color: Colors.black }}>
+                                    {/* Complete Business's Guides to Web Development */}
+                                    The Complete Game developemnt Course
+                                </Text>
+                            </View>
+
+                            {/* //Button */}
+                            <TouchableOpacity>
+                                <Text style={{ color: Colors.navBlue, fontSize: 13, fontWeight: 'bold', marginLeft: RFPercentage(1), marginTop: RFPercentage(1) }}>
+                                    {/* {item.time} */}
+                                    Take Course
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                    {/* ))} */}
+
+                    {/* 2nd Row */}
+                    <View style={{ marginTop: RFPercentage(3), width: '90%', flexDirection: 'row', alignItems: 'center' }} >
+
+                        {/* Card */}
+                        <View style={{ width: RFPercentage(21.5), height: RFPercentage(25), borderRadius: RFPercentage(1.5), backgroundColor: Colors.white, marginLeft: RFPercentage(1.5) }}>
+
+                            {/* //Image*/}
+                            <Image style={{ width: RFPercentage(21.5), height: RFPercentage(15), borderTopLeftRadius: RFPercentage(1.5), borderTopRightRadius: RFPercentage(1.5), overflow: 'hidden' }} source={require('../../assets/math.jpg')} />
+
+                            {/* //Title */}
+                            <View style={{ width: '90%', marginLeft: RFPercentage(1), marginTop: RFPercentage(1) }}>
+                                <Text style={{ fontSize: 15, fontWeight: 'bold', color: Colors.black }}>
+                                    {/* Complete Business's Guides to Web Development */}
+                                    The Complete Game developemnt Course
+                                </Text>
+                            </View>
+
+                            {/* //Button */}
+                            <TouchableOpacity>
+                                <Text style={{ color: Colors.navBlue, fontSize: 13, fontWeight: 'bold', marginLeft: RFPercentage(1), marginTop: RFPercentage(1) }}>
+                                    {/* {item.time} */}
+                                    Take Course
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
+
+
+
+                        {/* Card */}
+                        <View style={{ width: RFPercentage(21.5), height: RFPercentage(25), borderRadius: RFPercentage(1.5), backgroundColor: Colors.white, marginLeft: RFPercentage(1.5) }}>
+
+                            {/* //Image*/}
+                            <Image style={{ width: RFPercentage(21.5), height: RFPercentage(15), borderTopLeftRadius: RFPercentage(1.5), borderTopRightRadius: RFPercentage(1.5), overflow: 'hidden' }} source={require('../../assets/unity.jpg')} />
+
+                            {/* //Title */}
+                            <View style={{ width: '90%', marginLeft: RFPercentage(1), marginTop: RFPercentage(1) }}>
+                                <Text style={{ fontSize: 15, fontWeight: 'bold', color: Colors.black }}>
+                                    {/* Complete Business's Guides to Web Development */}
+                                    The Complete Game developemnt Course
+                                </Text>
+                            </View>
+
+                            {/* //Button */}
+                            <TouchableOpacity>
+                                <Text style={{ color: Colors.navBlue, fontSize: 13, fontWeight: 'bold', marginLeft: RFPercentage(1), marginTop: RFPercentage(1) }}>
+                                    {/* {item.time} */}
+                                    Take Course
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+
+                    {/* 3rd Row */}
+                    <View style={{ marginTop: RFPercentage(3), width: '90%', flexDirection: 'row', alignItems: 'center' }} >
+
+                        {/* Card */}
+                        <View style={{ width: RFPercentage(21.5), height: RFPercentage(25), borderRadius: RFPercentage(1.5), backgroundColor: Colors.white, marginLeft: RFPercentage(1.5) }}>
+
+                            {/* //Image*/}
+                            <Image style={{ width: RFPercentage(21.5), height: RFPercentage(15), borderTopLeftRadius: RFPercentage(1.5), borderTopRightRadius: RFPercentage(1.5), overflow: 'hidden' }} source={require('../../assets/angular.png')} />
+
+                            {/* //Title */}
+                            <View style={{ width: '90%', marginLeft: RFPercentage(1), marginTop: RFPercentage(1) }}>
+                                <Text style={{ fontSize: 15, fontWeight: 'bold', color: Colors.black }}>
+                                    {/* Complete Business's Guides to Web Development */}
+                                    The Complete Game developemnt Course
+                                </Text>
+                            </View>
+
+                            {/* //Button */}
+                            <TouchableOpacity>
+                                <Text style={{ color: Colors.navBlue, fontSize: 13, fontWeight: 'bold', marginLeft: RFPercentage(1), marginTop: RFPercentage(1) }}>
+                                    {/* {item.time} */}
+                                    Take Course
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
+
+
+
+                        {/* Card */}
+                        <View style={{ width: RFPercentage(21.5), height: RFPercentage(25), borderRadius: RFPercentage(1.5), backgroundColor: Colors.white, marginLeft: RFPercentage(1.5) }}>
+
+                            {/* //Image*/}
+                            <Image style={{ width: RFPercentage(21.5), height: RFPercentage(15), borderTopLeftRadius: RFPercentage(1.5), borderTopRightRadius: RFPercentage(1.5), overflow: 'hidden' }} source={require('../../assets/math.jpg')} />
+
+                            {/* //Title */}
+                            <View style={{ width: '90%', marginLeft: RFPercentage(1), marginTop: RFPercentage(1) }}>
+                                <Text style={{ fontSize: 15, fontWeight: 'bold', color: Colors.black }}>
+                                    {/* Complete Business's Guides to Web Development */}
+                                    The Complete Game developemnt Course
+                                </Text>
+                            </View>
+
+                            {/* //Button */}
+                            <TouchableOpacity>
+                                <Text style={{ color: Colors.navBlue, fontSize: 13, fontWeight: 'bold', marginLeft: RFPercentage(1), marginTop: RFPercentage(1) }}>
+                                    {/* {item.time} */}
+                                    Take Course
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                    <View style={{ marginBottom: RFPercentage(10) }} />
 
                 </View>
             </ScrollView>
+
+            {/* BottomTab */}
+            <BottomTab />
         </Screen>
     )
 }
